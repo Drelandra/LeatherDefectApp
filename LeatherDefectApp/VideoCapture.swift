@@ -20,7 +20,7 @@ public class VideoCapture: NSObject {
     public weak var delegate: VideoCaptureDelegate?
     public var fps = 15
     
-    private var permissionGranted = false
+//    private var permissionGranted = false
     
     let captureSession = AVCaptureSession()
     let videoOutput = AVCaptureVideoDataOutput()
@@ -31,27 +31,27 @@ public class VideoCapture: NSObject {
     private let position = AVCaptureDevice.Position.front
     private let quality = AVCaptureSession.Preset.medium
     
-    private func configureSession() {
-        
-        guard permissionGranted else { return }
-        captureSession.sessionPreset = quality
-        guard let captureDevice = selectCaptureDevice() else { return }
-        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        guard captureSession.canAddInput(captureDeviceInput) else { return }
-        captureSession.addInput(captureDeviceInput)
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
-        guard captureSession.canAddOutput(videoOutput) else { return }
-        captureSession.addOutput(videoOutput)
-
-    }
+//    private func configureSession() {
+//
+//        guard permissionGranted else { return }
+//        captureSession.sessionPreset = quality
+//        guard let captureDevice = selectCaptureDevice() else { return }
+//        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
+//        guard captureSession.canAddInput(captureDeviceInput) else { return }
+//        captureSession.addInput(captureDeviceInput)
+//        let videoOutput = AVCaptureVideoDataOutput()
+//        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
+//        guard captureSession.canAddOutput(videoOutput) else { return }
+//        captureSession.addOutput(videoOutput)
+//
+//    }
     
-    private func selectCaptureDevice() -> AVCaptureDevice? {
-        return AVCaptureDevice.devices().filter {
-            ($0 as AnyObject).hasMediaType(AVMediaType.video) &&
-                ($0 as AnyObject).position == position
-            }.first
-    }
+//    private func selectCaptureDevice() -> AVCaptureDevice? {
+//        return AVCaptureDevice.devices().filter {
+//            ($0 as AnyObject).hasMediaType(AVMediaType.video) &&
+//                ($0 as AnyObject).position == position
+//            }.first
+//    }
     
     public func setUp(sessionPreset: AVCaptureSession.Preset = .vga640x480,
                       completion: @escaping (Bool) -> Void) {

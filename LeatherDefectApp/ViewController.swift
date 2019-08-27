@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     
     let objectDectectionModel = YOLOv3Tiny()
     
-    var frameExtractor: FrameExtractor!
-    
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
@@ -43,8 +41,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        frameExtractor = FrameExtractor()
         
         buttonOutlet.layer.cornerRadius = buttonOutlet.frame.width/2
         

@@ -18,7 +18,6 @@
 		86BD9D6323153A2E00A27580 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6023153A2E00A27580 /* Measure.swift */; };
 		86BD9D6423153A2E00A27580 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6123153A2E00A27580 /* VideoCapture.swift */; };
 		86BD9D6523153A2E00A27580 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6223153A2E00A27580 /* UIImage+CVPixelBuffer.swift */; };
-		86BD9D67231554EF00A27580 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D66231554EF00A27580 /* FrameExtractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		86BD9D6023153A2E00A27580 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		86BD9D6123153A2E00A27580 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		86BD9D6223153A2E00A27580 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
-		86BD9D66231554EF00A27580 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 				86BD9D4A231521ED00A27580 /* Assets.xcassets */,
 				86BD9D4C231521ED00A27580 /* LaunchScreen.storyboard */,
 				86BD9D4F231521ED00A27580 /* Info.plist */,
-				86BD9D66231554EF00A27580 /* FrameExtractor.swift */,
 			);
 			path = LeatherDefectApp;
 			sourceTree = "<group>";
@@ -170,7 +167,6 @@
 				86BD9D6323153A2E00A27580 /* Measure.swift in Sources */,
 				86BD9D5F2315395F00A27580 /* YOLOv3Tiny.mlmodel in Sources */,
 				86BD9D44231521EB00A27580 /* AppDelegate.swift in Sources */,
-				86BD9D67231554EF00A27580 /* FrameExtractor.swift in Sources */,
 				86BD9D57231524F700A27580 /* LeatherDefectObjectDetection.mlmodel in Sources */,
 				86BD9D6523153A2E00A27580 /* UIImage+CVPixelBuffer.swift in Sources */,
 			);
