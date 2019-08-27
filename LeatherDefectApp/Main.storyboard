@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LeatherDefectApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrN-1E-L02">
+                                <rect key="frame" x="0.0" y="44" width="414" height="802"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am0-wE-ezc" customClass="DrawingBoundingBoxView" customModule="LeatherDefectApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="802"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-0j-7rI">
+                                <rect key="frame" x="177" y="742" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Wy-0j-7rI" secondAttribute="height" multiplier="1:1" id="JaL-53-GMk"/>
+                                    <constraint firstAttribute="width" constant="60" id="qYy-3d-nUq"/>
+                                    <constraint firstAttribute="height" constant="60" id="soc-nQ-POx"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9L-0k-csc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="am0-wE-ezc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0pI-mE-XLe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Wy-0j-7rI" secondAttribute="bottom" constant="60" id="1Oh-J2-wgU"/>
+                            <constraint firstItem="am0-wE-ezc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8ck-8b-ewh"/>
+                            <constraint firstItem="0Wy-0j-7rI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OIv-a0-o53"/>
+                            <constraint firstAttribute="bottom" secondItem="am0-wE-ezc" secondAttribute="bottom" constant="50" id="OhI-3A-Uxt"/>
+                            <constraint firstItem="am0-wE-ezc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ppm-Fq-FdB"/>
+                            <constraint firstAttribute="bottom" secondItem="UrN-1E-L02" secondAttribute="bottom" constant="50" id="aRk-fB-wd3"/>
+                            <constraint firstItem="UrN-1E-L02" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bzL-Yc-wdQ"/>
+                            <constraint firstItem="UrN-1E-L02" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lco-FK-p8Z"/>
+                            <constraint firstItem="UrN-1E-L02" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nrq-Bt-kaX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eEn-rx-YF7"/>
+                    <connections>
+                        <outlet property="boxesView" destination="am0-wE-ezc" id="8Um-Hc-Fxy"/>
+                        <outlet property="buttonOutlet" destination="0Wy-0j-7rI" id="hbR-B5-rlM"/>
+                        <outlet property="videoPreview" destination="UrN-1E-L02" id="mWT-eX-svP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962.31884057971024" y="22.767857142857142"/>
+        </scene>
+    </scenes>
+</document>
