@@ -9,15 +9,18 @@
 import UIKit
 import Vision
 import CoreMedia
+import AVFoundation
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var boxesView: DrawingBoundingBoxView!
     @IBOutlet weak var buttonOutlet: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
     
     let objectDectectionModel = YOLOv3Tiny()
+    
+    var i = 0
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
@@ -43,6 +46,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         buttonOutlet.layer.cornerRadius = buttonOutlet.frame.width/2
+        
+//        flashButton.layer.zPosition = 10
         
         // setup the model
         setUpModel()
@@ -117,7 +122,61 @@ class ViewController: UIViewController {
         videoCapture.previewLayer?.frame = videoPreview.bounds
     }
     
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+        
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
+        }
+    }
     
+    
+    @IBAction func flashButtonTapped(_ sender: UIButton) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
+        sender.isSelected = !sender.isSelected
+        let toggleSelected = sender.isSelected
+        
+        let flashOnImage = UIImage(named: "FlashNyala")
+        let flashOffImage = UIImage(named: "Flash")
+
+        if toggleSelected{
+            toggleTorch(on: true)
+            flashButton.setImage(flashOnImage, for: UIControl.State.normal)
+//            print("nyala")
+        }else{
+            toggleTorch(on: false)
+            flashButton.setImage(flashOffImage, for: UIControl.State.normal)
+//            print("mati")
+        }
+        
+//        let flash = sender.isSelected
+        
+//        switch flash {
+//        case sender.isSelected:
+//            toggleTorch(on: true)
+//        case !sender.isSelected:
+//            toggleTorch(on: false)
+//        default:
+//            print("error")
+//        }
+    }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         

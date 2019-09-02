@@ -133,8 +133,14 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
             let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
             delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer, timestamp: timestamp)
             
-            print("Got a frame! \(i)")
             i = i + 1
+            
+            var image = imageFromSampleBuffer(sampleBuffer: sampleBuffer)
+            
+            let newFigure = Figures(image: image!)
+            
+            FiguresArray.append(newFigure)
+            
             if(i%50 == 0)
             {
                 
@@ -144,6 +150,14 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         //print("dropped frame")
+    }
+    
+    private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
+        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
+        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
+        let context = CIContext()
+        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
+        return UIImage(cgImage: cgImage)
     }
 }
 

@@ -41,11 +41,23 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9L-0k-csc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiM-8Y-FNX">
+                                <rect key="frame" x="23" y="44" width="19" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oiM-8Y-FNX" secondAttribute="height" multiplier="19:27" id="3X9-Ni-pcG"/>
+                                </constraints>
+                                <state key="normal" image="Flash"/>
+                                <connections>
+                                    <action selector="flashButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gd1-gW-HJ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="am0-wE-ezc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0pI-mE-XLe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Wy-0j-7rI" secondAttribute="bottom" constant="60" id="1Oh-J2-wgU"/>
+                            <constraint firstItem="oiM-8Y-FNX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="1yW-PZ-7il"/>
                             <constraint firstItem="am0-wE-ezc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8ck-8b-ewh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oiM-8Y-FNX" secondAttribute="trailing" constant="372" id="Fbc-vm-wlE"/>
                             <constraint firstItem="0Wy-0j-7rI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OIv-a0-o53"/>
                             <constraint firstAttribute="bottom" secondItem="am0-wE-ezc" secondAttribute="bottom" constant="50" id="OhI-3A-Uxt"/>
                             <constraint firstItem="am0-wE-ezc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ppm-Fq-FdB"/>
@@ -53,6 +65,7 @@
                             <constraint firstItem="UrN-1E-L02" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bzL-Yc-wdQ"/>
                             <constraint firstItem="UrN-1E-L02" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lco-FK-p8Z"/>
                             <constraint firstItem="UrN-1E-L02" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nrq-Bt-kaX"/>
+                            <constraint firstItem="oiM-8Y-FNX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tBy-TN-Yd1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -60,12 +73,65 @@
                     <connections>
                         <outlet property="boxesView" destination="am0-wE-ezc" id="8Um-Hc-Fxy"/>
                         <outlet property="buttonOutlet" destination="0Wy-0j-7rI" id="hbR-B5-rlM"/>
+                        <outlet property="flashButton" destination="oiM-8Y-FNX" id="Org-se-MBo"/>
                         <outlet property="videoPreview" destination="UrN-1E-L02" id="mWT-eX-svP"/>
+                        <segue destination="PoY-5A-0eG" kind="show" id="ech-Ge-kHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.31884057971024" y="22.767857142857142"/>
         </scene>
+        <!--Show Images View Controller-->
+        <scene sceneID="gCt-er-gLg">
+            <objects>
+                <viewController id="PoY-5A-0eG" customClass="ShowImagesViewController" customModule="LeatherDefectApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1VG-VM-Kzd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rYC-bT-iKj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShowTableViewCell" rowHeight="300" id="n22-jg-qte" customClass="ShowTableViewCell" customModule="LeatherDefectApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n22-jg-qte" id="uVk-wd-4bl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="299.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-c1-Da1">
+                                                    <rect key="frame" x="82" y="24" width="250" height="250"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="showImage" destination="JHg-c1-Da1" id="eZb-Id-PeQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PoY-5A-0eG" id="cTu-gL-gKq"/>
+                                    <outlet property="delegate" destination="PoY-5A-0eG" id="au7-iS-csW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bbH-z1-CDe"/>
+                    </view>
+                    <connections>
+                        <outlet property="ShowTableView" destination="rYC-bT-iKj" id="BkE-Qv-2bG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNH-2s-9i6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="23"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Flash" width="1992" height="3040"/>
+    </resources>
 </document>

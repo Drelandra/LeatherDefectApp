@@ -18,6 +18,9 @@
 		86BD9D6323153A2E00A27580 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6023153A2E00A27580 /* Measure.swift */; };
 		86BD9D6423153A2E00A27580 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6123153A2E00A27580 /* VideoCapture.swift */; };
 		86BD9D6523153A2E00A27580 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6223153A2E00A27580 /* UIImage+CVPixelBuffer.swift */; };
+		86BD9D6B23167B4600A27580 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6823167B4500A27580 /* ShowTableViewCell.swift */; };
+		86BD9D6C23167B4600A27580 /* FiguresClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6923167B4500A27580 /* FiguresClass.swift */; };
+		86BD9D6D23167B4600A27580 /* ShowImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9D6A23167B4600A27580 /* ShowImagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		86BD9D6023153A2E00A27580 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		86BD9D6123153A2E00A27580 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		86BD9D6223153A2E00A27580 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		86BD9D6823167B4500A27580 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
+		86BD9D6923167B4500A27580 /* FiguresClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiguresClass.swift; sourceTree = "<group>"; };
+		86BD9D6A23167B4600A27580 /* ShowImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				86BD9D43231521EB00A27580 /* AppDelegate.swift */,
 				86BD9D45231521EB00A27580 /* ViewController.swift */,
 				86BD9D5A2315260200A27580 /* Main.storyboard */,
+				86BD9D6923167B4500A27580 /* FiguresClass.swift */,
+				86BD9D6A23167B4600A27580 /* ShowImagesViewController.swift */,
+				86BD9D6823167B4500A27580 /* ShowTableViewCell.swift */,
 				86BD9D5C2315389000A27580 /* DrawingBoundingBoxView.swift */,
 				86BD9D6023153A2E00A27580 /* Measure.swift */,
 				86BD9D6223153A2E00A27580 /* UIImage+CVPixelBuffer.swift */,
@@ -163,10 +172,13 @@
 			files = (
 				86BD9D46231521EB00A27580 /* ViewController.swift in Sources */,
 				86BD9D6423153A2E00A27580 /* VideoCapture.swift in Sources */,
+				86BD9D6D23167B4600A27580 /* ShowImagesViewController.swift in Sources */,
+				86BD9D6C23167B4600A27580 /* FiguresClass.swift in Sources */,
 				86BD9D5D2315389100A27580 /* DrawingBoundingBoxView.swift in Sources */,
 				86BD9D6323153A2E00A27580 /* Measure.swift in Sources */,
 				86BD9D5F2315395F00A27580 /* YOLOv3Tiny.mlmodel in Sources */,
 				86BD9D44231521EB00A27580 /* AppDelegate.swift in Sources */,
+				86BD9D6B23167B4600A27580 /* ShowTableViewCell.swift in Sources */,
 				86BD9D57231524F700A27580 /* LeatherDefectObjectDetection.mlmodel in Sources */,
 				86BD9D6523153A2E00A27580 /* UIImage+CVPixelBuffer.swift in Sources */,
 			);
